@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.minimap.renderCharacters": false,
+  "json.format.enable": false,
+  "html.format.enable": false,
+  "html.format.wrapLineLength": 80,
+  "prettier.eslintIntegration": true,
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 90,
+  "prettier.semi": true,
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "none",
+  "prettier.useTabs": false,
+  "prettier.jsonEnable": [],
+  "tslint.autoFixOnSave": true
+}
