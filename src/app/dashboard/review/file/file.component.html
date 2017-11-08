@@ -1,0 +1,9 @@
+<div class="file-wrapper">
+  <div class="file-header"></div>
+  <div class="code-pane">
+    <div class="line" *ngFor="let line of lines; let i = index">
+      <div class="line-number">{{ i }}</div>
+      <div class="code-line">{{ line }}</div>
+    </div>
+  </div>
+</div>

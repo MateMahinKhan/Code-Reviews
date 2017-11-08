@@ -1,0 +1,5 @@
+<input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.js">
+
+<div *ngIf="file">
+  <cr-file [file]="file"></cr-file>
+</div>

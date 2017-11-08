@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(public authService: AuthService, private router: Router) {
     this.authService.af.authState.subscribe(
       (auth) => {
-        if (auth == null) {
+        if (auth === null) {
           this.router.navigate(['login']);
         } else {
           console.log(auth);
