@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from 'angularfire2';
@@ -24,7 +25,8 @@ import { AuthService, DataService } from './services';
     AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
     AppRoutes,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule
   ],
   providers: [ AngularFireDatabase, DataService, AuthService, AngularFireAuth ],
   bootstrap: [AppComponent]
