@@ -4,13 +4,16 @@
     margin: 10px;
   }
   .code-pane {
+    overflow-x: scroll;
     .line-number {
       width: 40px;
       display: inline-block;
     }
     .code-line {
       display: inline;
-      word-break: break-all;
+      &.diffExist {
+        background-color: yellowgreen;
+      }
     }
   }
 }

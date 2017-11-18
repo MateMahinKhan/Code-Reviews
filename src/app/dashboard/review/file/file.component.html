@@ -4,15 +4,15 @@
   </div>
   <div fxLayout="row" fxLayoutGap="10px">
     <div class="code-pane" fxFlex="1 1 48%">
-      <div class="line" *ngFor="let line of file1lines; let i = index">
+      <div class="line" *ngFor="let line of file2RenderLines; let i = index">
         <div class="line-number" fxFlex="1 1 5%">{{ i }}</div>
-        <div class="code-line" fxFlex="1 1 95%">{{ line }}</div>
+        <div class="code-line" fxFlex="1 1 95%">{{ line.oldLine }}</div>
       </div>
     </div>
     <div class="code-pane" fxFlex="1 1 48%">
-      <div class="line" *ngFor="let line of file2lines; let i = index">
+      <div class="line" *ngFor="let line of file2RenderLines; let i = index">
         <div class="line-number" fxFlex="1 1 5%">{{ i }}</div>
-        <div class="code-line" fxFlex="1 1 95%">{{ line }}</div>
+        <div class="code-line" fxFlex="1 1 95%" [ngClass]="{'diffExist': line.difference}">{{ line.newLine }}</div>
       </div>
     </div>
   </div>

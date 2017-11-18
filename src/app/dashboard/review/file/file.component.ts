@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Line } from './../../../shared/interfaces';
+import { DifferenceService } from './../../../shared/services';
 
 @Component({
   selector: 'cr-file',
@@ -8,10 +10,11 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FileComponent implements OnInit {
   @Input() file1: File;
   @Input() file2: File;
-  file1lines: Array<string>;
-  file2lines: Array<string>;
+  file1linesComparason: Array<string>;
+  file2linesComparason: Array<string>;
 
-  constructor() { }
+  file2RenderLines: Array<Line>;
+  constructor(private differenceService: DifferenceService) { }
 
   ngOnInit() {
     const reader1: FileReader = new FileReader();
@@ -29,13 +32,14 @@ export class FileComponent implements OnInit {
 
   displayCode1(fileContents: string): void {
     // replace all spaces with html render-able space
-    fileContents = fileContents.replace(/ /g, '\xa0');
-    this.file1lines = fileContents.split('\n');
+    fileContents = fileContents.replace(/ /g, '\xa0\xa0');
+    this.file1linesComparason = fileContents.split('\n');
   }
   displayCode2(fileContents: string): void {
     // replace all spaces with html render-able space
-    fileContents = fileContents.replace(/ /g, '\xa0');
-    this.file2lines = fileContents.split('\n');
+    fileContents = fileContents.replace(/ /g, '\xa0\xa0');
+    this.file2linesComparason = fileContents.split('\n');
+    this.file2RenderLines = this.differenceService.computeDifferences(this.file1linesComparason, this.file2linesComparason);
   }
 
 }

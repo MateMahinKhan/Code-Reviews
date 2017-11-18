@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from './services';
+import { AuthService } from './shared/services';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,6 @@ export class AppComponent {
         if (auth === null) {
           this.router.navigate(['login']);
         } else {
-          console.log(auth);
           this.router.navigate(['']);
         }
       }
