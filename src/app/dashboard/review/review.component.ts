@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./review.component.scss']
 })
 export class ReviewComponent implements OnInit {
-  file1: File;
-  file2: File;
+  files: Array<File> = [];
   constructor() { }
 
   ngOnInit() {}
@@ -15,8 +14,8 @@ export class ReviewComponent implements OnInit {
   fileChange(event) {
     const fileList: FileList = event.target.files;
     if (fileList.length > 0) {
-      this.file1 = fileList[0];
-      this.file2 = fileList[1];
+      this.files.push(fileList[0]);
+      this.files.push(fileList[1]);
     }
   }
 

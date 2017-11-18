@@ -1,5 +1,5 @@
 Select two files: <input type="file" (change)="fileChange($event)" placeholder="Upload file" multiple>
 
-<div *ngIf="file1 && file2">
-  <cr-file [file1]="file1" [file2]="file2"></cr-file>
+<div *ngIf="files.length === 2">
+  <cr-file [files]="files"></cr-file>
 </div>
