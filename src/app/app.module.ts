@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -8,21 +10,24 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 
-import { HomeComponent, LoginComponent } from './';
-import { AuthService, DataService } from './services';
+import { FileComponent, HomeComponent, LoginComponent, ReviewComponent, Services } from './';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ReviewComponent,
+    FileComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
-    AppRoutes
+    AppRoutes,
+    FormsModule,
+    FlexLayoutModule
   ],
-  providers: [ AngularFireDatabase, DataService, AuthService, AngularFireAuth ],
+  providers: [ AngularFireDatabase, ...Services, AngularFireAuth ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

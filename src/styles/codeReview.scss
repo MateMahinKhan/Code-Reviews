@@ -1,0 +1,19 @@
+.file-wrapper {
+  .file-header {
+    font-size: 22px;
+    margin: 10px;
+  }
+  .code-pane {
+    overflow-x: scroll;
+    .line-number {
+      width: 40px;
+      display: inline-block;
+    }
+    .code-line {
+      display: inline;
+      &.diffExist {
+        background-color: yellowgreen;
+      }
+    }
+  }
+}

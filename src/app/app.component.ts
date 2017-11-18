@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from './services';
+import { AuthService } from './shared/services';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +12,9 @@ export class AppComponent {
   constructor(public authService: AuthService, private router: Router) {
     this.authService.af.authState.subscribe(
       (auth) => {
-        if (auth == null) {
+        if (auth === null) {
           this.router.navigate(['login']);
         } else {
-          console.log(auth);
           this.router.navigate(['']);
         }
       }

@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'your api key',
-    authDomain: 'your domain.firebase.com',
-    databaseURL: 'url.firebaseio.com',
-    projectId: 'ft-zxzx',
-    storageBucket: 'fx.appspot.com',
-    messagingSenderId: '8656'
+    apiKey: 'AIzaSyCGyjBhcLuGKuQeYueDj-Ql433Vnhnhyvs',
+    authDomain: 'code-reviews-ca6c1.firebaseapp.com',
+    databaseURL: 'https://code-reviews-ca6c1.firebaseio.com',
+    projectId: 'code-reviews-ca6c1',
+    storageBucket: 'code-reviews-ca6c1.appspot.com',
+    messagingSenderId: '372884956631'
   }
 };
