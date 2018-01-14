@@ -10,15 +10,12 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 
-import { FileComponent, HomeComponent, LoginComponent, ReviewComponent, Services } from './';
+import { AppComponents, Services } from './';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    HomeComponent,
-    ReviewComponent,
-    FileComponent
+    ...AppComponents
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
